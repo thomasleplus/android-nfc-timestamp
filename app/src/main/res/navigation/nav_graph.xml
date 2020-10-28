@@ -6,7 +6,7 @@
     app:startDestination="@id/MainFragment">
     <fragment
         android:id="@+id/MainFragment"
-        android:name="org.leplus.nfctimestamp.MainFragment"
+        android:name="org.leplus.nfctimestamp.ui.main.MainFragment"
         android:label="@string/main_fragment_label"
         tools:layout="@layout/fragment_main" />
 </navigation>

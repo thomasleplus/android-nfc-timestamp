@@ -1,9 +1,10 @@
-package org.leplus.nfctimestamp
+package org.leplus.nfctimestamp.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import org.leplus.nfctimestamp.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,4 +29,5 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }
