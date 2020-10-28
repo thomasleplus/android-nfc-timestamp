@@ -4,6 +4,5 @@
     <!-- Strings used for fragments for navigation -->
     <string name="main_fragment_label">Main Fragment</string>
     <string name="send">Send</string>
-
     <string name="hello_main_fragment">Hello main fragment</string>
 </resources>
