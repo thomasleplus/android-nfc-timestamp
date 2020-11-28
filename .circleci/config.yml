@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
+      - accept_licenses:
+          name: Accept licenses
+          command: yes | sdkmanager --licenses
       - save_cache:
           paths:
             - ~/.gradle
