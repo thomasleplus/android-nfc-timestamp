@@ -23,3 +23,10 @@ jobs:
         java-version: ${{ matrix.java }}
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Upload artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: android-nfc-timestamp
+        path: |
+          app/build/outputs/
+          app/build/reports/
