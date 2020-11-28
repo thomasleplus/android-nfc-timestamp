@@ -6,6 +6,7 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -21,19 +22,25 @@ android:
     - android-30
   licenses:
     - 'android-sdk-license-.+'
+
 before_install:
   - yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses || if [ $? -ne '141' ]; then exit $?; fi;  #Captures SIGPIPE 141 error but still allow repeating "y" to accept all licenses
+
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache/
+
 script:
     - .travis/${TASK}.sh
+
 env:
     - TASK=lint
     - TASK=test
+
 after_success:
     - .travis/coverage.sh
