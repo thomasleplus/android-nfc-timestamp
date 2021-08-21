@@ -36,11 +36,11 @@ cache:
     - $HOME/.android/build-cache/
 
 script:
-    - .travis/${TASK}.sh
+  - .travis/${TASK}.sh
 
 env:
-    - TASK=lint
-    - TASK=test
+  - TASK=lint
+  - TASK=test
 
 after_success:
-    - .travis/coverage.sh
+  - .travis/coverage.sh
