@@ -13,11 +13,11 @@ class WaveshareSenderAdapter {
     private var delegate = a()
 
     fun send(tag: NfcA?, size: Int, bitmap: Bitmap?): Int {
-        return delegate.a(tag, size, bitmap)
+        return delegate.b(tag, size, bitmap)
     }
 
     fun progress(): Int {
-        return delegate.b()
+        return delegate.c()
     }
 
 }
