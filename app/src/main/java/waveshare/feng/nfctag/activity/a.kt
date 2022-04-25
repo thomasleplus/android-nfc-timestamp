@@ -25,10 +25,6 @@ class a {
         c = 0
     }
 
-    internal constructor() {
-        c = 0
-    }
-
     fun b(): Int {
         return c
     }
