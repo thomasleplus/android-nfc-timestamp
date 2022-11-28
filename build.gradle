@@ -1,3 +1,7 @@
+plugins {
+  id 'com.github.ben-manes.versions' version '0.44.0'
+}
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.7.22"
@@ -15,6 +19,9 @@ buildscript {
 }
 
 allprojects {
+
+    apply plugin: com.github.benmanes.gradle.versions.VersionsPlugin
+
     repositories {
         google()
         jcenter()
