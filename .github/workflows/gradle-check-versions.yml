@@ -23,5 +23,12 @@ jobs:
       with:
         distribution: zulu
         java-version: ${{ matrix.java }}
-    - name: Build with Gradle
+    - name: Check versions
       run: ./gradlew --refresh-dependencies dependencyUpdates
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: android-nfc-timestamp
+        path: |
+          build/dependencyUpdates/
+          app/build/dependencyUpdates/
