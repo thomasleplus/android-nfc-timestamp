@@ -1,8 +1,16 @@
 ---
+
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
+
 language: android
+
 jdk:
   - oraclejdk8
+
 sudo: required
+
 addons:
   apt:
     packages:
@@ -36,8 +44,11 @@ cache:
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache/
 
+sast:
+  stage: check
+
 script:
-  - .travis/${TASK}.sh
+  - '.travis/${TASK}.sh'
 
 env:
   - TASK=lint
