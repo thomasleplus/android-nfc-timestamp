@@ -24,7 +24,7 @@ jobs:
         distribution: zulu
         java-version: ${{ matrix.java }}
     - name: Check versions
-      run: ./gradlew --refresh-dependencies --info dependencyUpdates
+      run: ./gradlew --refresh-dependencies dependencyUpdates
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
