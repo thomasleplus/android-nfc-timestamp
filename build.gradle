@@ -17,6 +17,12 @@ buildscript {
 plugins {
   id 'com.github.ben-manes.versions' version '0.44.0'
 }
+    
+def isNonStable = { String version ->
+    def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
 
 allprojects {
 
@@ -25,12 +31,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-    }
-    
-    def isNonStable = { String version ->
-        def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
-        def regex = /^[0-9,.v-]+(-r)?$/
-        return !stableKeyword && !(version ==~ regex)
     }
     
     // https://github.com/ben-manes/gradle-versions-plugin
