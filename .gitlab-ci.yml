@@ -7,7 +7,7 @@ include:
 language: android
 
 jdk:
-  - oraclejdk8
+  - oraclejdk17
 
 sudo: required
 
@@ -24,11 +24,8 @@ android:
     - tools # TODO force travis to fetch latest tools
     - platform-tools
 
-    # The BuildTools version used by your project
-    - build-tools-30.0.2
-
     # The SDK version used to compile your project
-    - android-31
+    - android-33
   licenses:
     - 'android-sdk-license-.+'
 
