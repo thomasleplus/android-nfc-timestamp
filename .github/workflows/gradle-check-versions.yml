@@ -1,0 +1,27 @@
+---
+
+name: Gradle Check Versions
+
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 17 ]
+    name: Java ${{ matrix.java }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK ${{ matrix.java }}
+      uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: ${{ matrix.java }}
+    - name: Build with Gradle
+      run: ./gradlew --refresh-dependencies dependencyUpdates
