@@ -6,6 +6,8 @@ plugins {
 android {
     compileSdkVersion 33
 
+    namespace "org.leplus.nfctimestamp"
+
     defaultConfig {
         applicationId "org.leplus.nfctimestamp"
         minSdkVersion 16
