@@ -20,6 +20,8 @@ jobs:
         java: [ 17, 19 ]
     name: Java ${{ matrix.java }}
     steps:
+    - name: Set REPOSITORY
+      run: echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
     - uses: actions/checkout@v4
     - name: Set up JDK ${{ matrix.java }}
       uses: actions/setup-java@v4
@@ -31,7 +33,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: android-nfc-timestamp
+        name: ${{ env.REPOSITORY }}
         path: |
           app/build/outputs/
           app/build/reports/
